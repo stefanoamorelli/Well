@@ -2,8 +2,6 @@
 
 > You don’t have to waste time collecting invoices. AI can.
 
-![Well logo](link-to-logo-if-available)
-
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/YOUR_EXTENSION_ID.svg)](https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
