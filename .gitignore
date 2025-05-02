@@ -37,3 +37,4 @@ Thumbs.db
 !*.json
 package-lock.json
 package.json
+!index_by_mcp.json
