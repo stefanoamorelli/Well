@@ -34,5 +34,6 @@ Thumbs.db
 # Other ignores
 *.csv
 *.js
-!plugins/*.json
-!index_by_mcp.json
+!*.json
+package-lock.json
+package.json
