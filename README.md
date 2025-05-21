@@ -1,9 +1,9 @@
-# Well App AI - Contribute Building Operators that Conquer the International Invoice Infrastructure  &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) 
+# Well App AI - Contribute Building Operators that Conquer the International Invoice Infrastructure 
 
 > You don’t have to waste time collecting invoices. AI can.
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/opeojlhedogedjbonianohhoijlgknna.svg)]([https://chromewebstore.google.com/detail/well/opeojlhedogedjbonianohhoijlgknna])
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
