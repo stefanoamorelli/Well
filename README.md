@@ -104,7 +104,7 @@ We believe invoice exchange should follow a universal protocol: instant, standar
 
 ## Installation
 
-1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID).
+1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/opeojlhedogedjbonianohhoijlgknna).
 2. Pin the extension to your toolbar.
 3. Log in to start syncing with your accounting tools.
 
