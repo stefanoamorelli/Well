@@ -3,9 +3,9 @@
 </a>
 
 <div align="center">
-    <img src="https://badgen.net/npm/v/extract-invoice-ai" alt="NPM Version" />
-  <img src="https://badgen.net/bundlephobia/minzip/extract-invoice-ai" alt="Minzipped size"/>
-    <img src="https://github.com/wellapp/extract-invoice-ai/workflows/CI/badge.svg" alt="Build Status" />
+    <img src="https://img.shields.io/npm/v/ai-invoice-extractor" alt="NPM Version" />
+    <img src="https://img.shields.io/github/license/wellapp-ai/well" alt="License" />
+    <img src="https://img.shields.io/github/actions/workflow/status/wellapp-ai/well/ai-invoice-extractor-ci" alt="Build Status">
 </a>
 </div>
 <br />
