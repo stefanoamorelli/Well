@@ -21,8 +21,8 @@ This project allows you to:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/receipt-gen-ai.git
-cd receipt-gen-ai
+git clone https://github.com/WellApp-ai/Well.git
+cd ai-receipt-generator
 ```
 
 ### 2. Create and activate a virtual environment
@@ -83,13 +83,13 @@ python src/core/cli.py --style table_noire
 ## 📁 Project Structure
 
 ```txt
-receipt-gen-ai/
+ai-receipt-generator/
 ├── src/ 
 │    └── core/
 │       ├── data_generator.py         # Generate JSON data (Faker)
 │       ├── prompt_renderer.py        # Inject data into image prompt
 │       ├── cli.py                    # Main CLI entry point (Typer)
-│       ├── config_loader.py          # Load model.yaml
+│       ├── config_loader.py          # Load models.yaml
 │       ├── generators/
 │       │   ├── base.py
 │       │   └── openai_generator.py
@@ -121,7 +121,7 @@ receipt-gen-ai/
 
 ## ⚙️ Configuration Files
 
-### `config/model.yaml`
+### `config/models.yaml`
 
 Defines the models used:
 
@@ -188,11 +188,11 @@ This will:
 
 ---
 
-### ▶️ Option 2 — Using `run.sh` (macOS/Linux)
+### ▶️ Option 2 — Using `run_api.sh` (macOS/Linux)
 
 ```bash
-chmod +x run.sh
-./run.sh
+chmod +x run_api.sh
+./run_api.sh
 ```
 
 Same behavior as above: activates your venv, sets the path, and launches the API.
