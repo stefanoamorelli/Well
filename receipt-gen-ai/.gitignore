@@ -1,0 +1,38 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Env files
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyInstaller / packaging
+dist/
+build/
+*.spec
+
+# Fichiers générés automatiquement
+exports/

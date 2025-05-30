@@ -1,0 +1,85 @@
+{
+  "transaction_id": "765eb672-cc1",
+  "authorization_code": "522199",
+  "transaction_date_time": "2025-05-16T09:59:24.002678Z",
+  "status": "APPROVED",
+  "transaction_amount": {
+    "amount": "17.74",
+    "currency": "EUR",
+    "tax_amount": "1.61",
+    "tip_amount": "0.00",
+    "amount_tendered": "17.74",
+    "change_given": "0.00",
+    "rounding_adjustment": "0.00"
+  },
+  "receipt_number": "RCPT-126788",
+  "operator_id": "CASHIER01",
+  "merchant": {
+    "name": "Starbucks",
+    "merchant_id": "M215697096",
+    "vat_id": "VAT FR961307312",
+    "registration_id": "CRN 73497174",
+    "address": {
+      "line1": "29, chemin de Brunel",
+      "city": "Baudryboeuf",
+      "state": [
+        "58",
+        "Ni\u00e8vre"
+      ],
+      "postal_code": "13444",
+      "country": "FR"
+    },
+    "phone": "03 85 56 23 82",
+    "website": "http://www.gros.com/",
+    "logo_url": "https://dummyimage.com/400x100",
+    "logo_alt_text": "Logo",
+    "custom_header_lines": [
+      "Customer Copy"
+    ],
+    "custom_footer_lines": [
+      "Merci de votre visite !"
+    ]
+  },
+  "terminal": {
+    "terminal_id": "T993598251",
+    "entry_mode": "CHIP"
+  },
+  "card": {
+    "card_number_masked": "************1234",
+    "cardholder_name": "Catherine Voisin",
+    "payment_network": "VISA",
+    "card_type": "DEBIT"
+  },
+  "items": [
+    {
+      "description": "Qui",
+      "quantity": 1,
+      "unit_price": 5.56,
+      "line_total": 5.56,
+      "tax": 0.56
+    },
+    {
+      "description": "Volont\u00e9",
+      "quantity": 1,
+      "unit_price": 4.13,
+      "line_total": 4.13,
+      "tax": 0.41
+    },
+    {
+      "description": "Malgr\u00e9",
+      "quantity": 2,
+      "unit_price": 3.22,
+      "line_total": 6.44,
+      "tax": 0.64
+    }
+  ],
+  "loyalty": {
+    "loyalty_id": "MEMBER31402",
+    "points_earned": 17,
+    "points_balance": 367
+  },
+  "barcode": {
+    "barcode_data": "TXN:7908277183",
+    "barcode_type": "QR"
+  }
+}

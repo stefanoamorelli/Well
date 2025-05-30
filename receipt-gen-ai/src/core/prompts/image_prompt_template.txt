@@ -1,0 +1,49 @@
+Generate a realistic photo of a printed receipt using the following payload:
+
+{{ json_payload }}
+
+Preserve all content exactly as provided. Do not reformat, reword, or clean up any values. Maintain original casing, punctuation, and layout.
+
+Apply the following visual rendering style:
+
+{{ style_json }}
+
+### Instructions:
+
+LOGO
+- Fetch the brand’s official logo online.
+- Render it as low-res, dithered thermal print output. No clean vectors.
+
+LAYOUT & TYPOGRAPHY
+- Use real POS receipt fonts (monospace, Epson/Star printer style).
+- Text should show subtle misalignment and faded ink.
+- Fold lines must distort or fade text slightly.
+
+RECEIPT POSITION
+- Show receipt lying flat on a countertop.
+- Include a mild curl from the roll, partially flattened.
+- Add a fold or crease, preferably one already present.
+- Slight edge tearing or thermal paper texture is ideal.
+
+BACKGROUND
+- Use an authentic cashier/bar countertop (e.g., woodgrain, laminate, or speckled stone).
+- Lightly blur background for shallow depth of field, no excessive darkening.
+
+LIGHTING & PHOTOGRAPHY EFFECTS
+- Apply warm, indoor ambient lighting (café/bar vibe).
+- Simulate a real phone photo with:
+  - Light lens flare
+  - Smudges/reflections
+  - Minor blur, digital grain
+  - Optional vignetting
+
+🛑 DO NOT modify merchant name, website, phone number, item descriptions, totals, or any transaction field. Text integrity is critical.
+
+"item"                                         "TOTAL"
+Café {description}          x2 {quantity}    7.00 € {line\_total}
+Croissant {description}        x1 {qunatity}   2.00 € {line\_total}
+---
+
+Total HT ......................... 9.00 € {amount}
+TVA {vat\_rate}.......................... 0.90 € {vat\_amount}
+Total TTC ........................  9.90 € {amount\_tendered}

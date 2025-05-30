@@ -1,0 +1,1 @@
+"""Cela rend le dossier src/ explicitement reconnu comme un package Python."""

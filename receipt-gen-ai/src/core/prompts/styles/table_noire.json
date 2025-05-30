@@ -1,0 +1,10 @@
+{
+    "style": "Photo-realistic thermal receipt",
+    "background": "black laminated table surface with subtle wood grain",
+    "camera_angle": "top-down",
+    "lighting": "soft indoor café lighting",
+    "paper_texture": "slightly curled, matte thermal paper with subtle fold",
+    "text_legibility": "fully readable text",
+    "photo_effects": ["light vignette", "corner shadows", "minor blur"]
+  }
+  

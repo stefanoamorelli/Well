@@ -1,0 +1,20 @@
+# === CORE MODELS ===
+openai>=1.25.0              # For GPT-4 and GPT image models
+anthropic>=0.25.0           # For Claude 3 (optional)
+
+# === DATA GENERATION ===
+faker>=24.0.0               # Generate realistic synthetic data
+
+# === PROMPT RENDERING ===
+jinja2>=3.1.3               # Template engine for prompt rendering (optional)
+
+# === CONFIGURATION ===
+pyyaml>=6.0.1               # YAML config loader
+python-dotenv>=1.0.1        # Load environment variables from .env files if needed
+
+# === CLI / DEV TOOLS ===
+typer[all]>=0.9.0           # Structured CLI framework
+rich>=13.7.0                # Rich logs and pretty tracebacks
+
+# === TESTING (optional) ===
+pytest>=8.2.0
