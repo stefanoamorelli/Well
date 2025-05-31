@@ -3,6 +3,8 @@
 > Generator of realistic fake receipts (text + image) from structured data.
 > Uses Faker for synthetic data, custom image prompts, and DALL·E 3 (GPT-Image) for visual generation.
 
+![ChatGPT Image May 3, 2025, 11_31_53 PM (1)](https://github.com/user-attachments/assets/18705e51-c453-4263-b80b-7ab3df4e92bb)
+
 ---
 
 ## 📂 Project Overview
