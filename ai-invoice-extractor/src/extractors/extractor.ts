@@ -5,6 +5,7 @@ import { FileUtils } from "@/utils/file"
 import { StringUtils } from "@/utils/string"
 import { createMistral } from "@ai-sdk/mistral"
 import { createOpenAI } from "@ai-sdk/openai"
+import { createOllama } from 'ollama-ai-provider';
 import { APICallError, type LanguageModelV1, NoObjectGeneratedError, generateObject } from "ai"
 import type { z } from "zod"
 
@@ -131,6 +132,14 @@ export class OpenAIExtractor extends BaseExtractor {
   }
 }
 
+export class OllamaExtractor extends BaseExtractor {
+  constructor(model: AnyString, apiKey: string) {
+    logger.debug(`Creating extractor ollama:${model} with apiKey: ${StringUtils.mask(apiKey)}`)
+    const ollama = createOllama({ apiKey })
+    super(ollama(model))
+  }
+}
+
 // ==============================
 // Factory (entry point)
 // ==============================
@@ -142,6 +151,8 @@ export class Extractor {
         return new OpenAIExtractor(config.model, config.apiKey)
       case "mistral":
         return new MistralExtractor(config.model, config.apiKey)
+      case "ollama":
+        return new OllamaExtractor(config.model, config.apiKey)
       default:
         throw new Error(`Unsupported vendor: ${(config as AiConfig).vendor}`)
     }
