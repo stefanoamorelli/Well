@@ -1,5 +1,5 @@
 import z from "zod/v4"
-import { MISTRAL_MODEL_ID, OPENAI_MODEL_ID, PROMPT_ID } from "./constants"
+import { MISTRAL_MODEL_ID, OPENAI_MODEL_ID, GOOGLE_MODEL_ID, PROMPT_ID } from "./constants"
 
 // ==============================
 // Global types
@@ -14,13 +14,17 @@ export const MistralModelId = z.enum(MISTRAL_MODEL_ID)
 export type OpenAIModelId = z.infer<typeof OpenAiModelId>
 export const OpenAiModelId = z.enum(OPENAI_MODEL_ID)
 
-export type ModelId = MistralModelId | OpenAIModelId
+export type GoogleModelId = z.infer<typeof GoogleModelId>
+export const GoogleModelId = z.enum(GOOGLE_MODEL_ID)
+
+export type ModelId = MistralModelId | OpenAIModelId | GoogleModelId
 
 export const MistralVendor = z.literal("mistral")
 export const OpenAiVendor = z.literal("openai")
+export const GoogleVendor = z.literal("google")
 
 export type AiVendor = z.infer<typeof AiVendor>
-export const AiVendor = z.union([MistralVendor, OpenAiVendor])
+export const AiVendor = z.union([MistralVendor, OpenAiVendor, GoogleVendor])
 
 export type AiConfig = z.infer<typeof AiConfig>
 export const AiConfig = z.discriminatedUnion("vendor", [
@@ -32,6 +36,11 @@ export const AiConfig = z.discriminatedUnion("vendor", [
   z.object({
     vendor: z.literal("mistral"),
     model: MistralModelId,
+    apiKey: z.string().min(1)
+  }),
+  z.object({
+    vendor: z.literal("google"),
+    model: GoogleModelId,
     apiKey: z.string().min(1)
   })
 ])
