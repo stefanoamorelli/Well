@@ -18,7 +18,8 @@ export const PROMPTS: Record<PromptId, string> = {
 
 export const DEFAULT_MODEL_ID: Record<AiVendor, ModelId> = {
   openai: "o4-mini",
-  mistral: "mistral-small-latest"
+  mistral: "mistral-small-latest",
+  google: "gemini-1.5-flash"
 } as const
 
 export const MISTRAL_MODEL_ID = [
@@ -31,6 +32,16 @@ export const MISTRAL_MODEL_ID = [
   // "open-mistral-7b", // no vision capability
   // "open-mixtral-8x7b", // no vision capability
   // "open-mixtral-8x22b" // no vision capability
+] as const
+
+export const GOOGLE_MODEL_ID = [
+  "gemini-2.0-flash-exp",
+  "gemini-1.5-pro-latest",
+  "gemini-1.5-pro",
+  "gemini-1.5-flash-latest",
+  "gemini-1.5-flash",
+  "gemini-1.5-flash-8b-latest",
+  "gemini-1.5-flash-8b"
 ] as const
 
 export const OPENAI_MODEL_ID = [
