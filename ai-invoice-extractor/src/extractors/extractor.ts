@@ -1,10 +1,11 @@
 import { PROMPTS } from "@/constants"
 import { logger } from "@/libs/logger"
-import type { AiConfig, AnyString, MistralModelId, OpenAIModelId, PromptId } from "@/types"
+import type { AiConfig, AnyString, MistralModelId, OpenAIModelId, GoogleModelId, PromptId } from "@/types"
 import { FileUtils } from "@/utils/file"
 import { StringUtils } from "@/utils/string"
 import { createMistral } from "@ai-sdk/mistral"
 import { createOpenAI } from "@ai-sdk/openai"
+import { createGoogleGenerativeAI } from "@ai-sdk/google"
 import { createOllama } from 'ollama-ai-provider';
 import { APICallError, type LanguageModelV1, NoObjectGeneratedError, generateObject } from "ai"
 import type { z } from "zod"
@@ -146,6 +147,14 @@ export class OpenAIExtractor extends BaseExtractor {
   }
 }
 
+export class GoogleExtractor extends BaseExtractor {
+  constructor(model: GoogleModelId | AnyString, apiKey: string) {
+    logger.debug(`Creating extractor google:${model} with apiKey: ${StringUtils.mask(apiKey)}`)
+    const google = createGoogleGenerativeAI({ apiKey })
+    super(google(model))
+  }
+}
+
 export class OllamaExtractor extends BaseExtractor {
   constructor(model: AnyString, apiKey: string) {
     logger.debug(`Creating extractor ollama:${model} with apiKey: ${StringUtils.mask(apiKey)}`)
@@ -165,6 +174,8 @@ export class Extractor {
         return new OpenAIExtractor(config.model, config.apiKey)
       case "mistral":
         return new MistralExtractor(config.model, config.apiKey)
+      case "google":
+        return new GoogleExtractor(config.model, config.apiKey)
       case "ollama":
         return new OllamaExtractor(config.model, config.apiKey)
       default:
