@@ -23,7 +23,7 @@
 ## Features
 
 - 🔍 Extract invoice/receipt data
-- 🧠 Choose your AI models (open and mistral for now)
+- 🧠 Choose your AI models (OpenAI, Mistral, Google Gemini, and Ollama)
 - 🔧 Set AI keys with CLI and environment variables
 - ⭐ Pretty print the output
 - 🔄 Pipe output with other CLI
@@ -63,7 +63,7 @@ Options:
 
 Use also environment variables instead of `-v`, `-m` and `-k`:
 ```sh
-# EXTRACTOR_VENDOR="openai" # openai (default value) or mistral
+# EXTRACTOR_VENDOR="openai" # openai (default) | mistral | google | ollama
 # EXTRACTOR_MODEL="o4-mini" # o4-mini (default with openai)
 EXTRACTOR_API_KEY=
 ```
