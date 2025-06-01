@@ -10,6 +10,7 @@ export type MimeType =
   | "image/webp"
   | "application/pdf"
   | "application/octet-stream"
+  | "text/plain"
 
 export const MIMETYPES: Record<string, MimeType> = {
   png: "image/png",
@@ -17,7 +18,8 @@ export const MIMETYPES: Record<string, MimeType> = {
   jpg: "image/jpeg",
   gif: "image/gif",
   webp: "image/webp",
-  pdf: "application/pdf"
+  pdf: "application/pdf",
+  txt: "text/plain",
 }
 
 /**

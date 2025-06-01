@@ -45,8 +45,8 @@ export abstract class BaseExtractor implements IExtractor {
     const buffer = await FileUtils.readFile(path)
     const fileUrl = new URL(`data:${file.mimeType};base64,${buffer.toString("base64")}`)
 
-    if (file.fileType !== "image" && file.fileType !== "file") {
-      throw new Error("Only image and PDF files are supported.")
+    if (file.fileType !== "image" &&  file.fileType !== "text" && file.fileType !== "file") {
+      throw new Error("Only image, text and PDF files are supported.")
     }
 
     logger.info(`Analyzing ${file.filename}…`)
@@ -65,12 +65,15 @@ export abstract class BaseExtractor implements IExtractor {
               image: fileUrl,
               mimeType: file.mimeType
             }
-          : {
-              type: "file" as const,
-              data: fileUrl,
-              mimeType: file.mimeType,
-              filename: file.filename
-            }
+          : file.fileType === "text"
+              ? {
+                  type: "text" as const
+                }
+              : {
+                  type: "file" as const,
+                  mimeType: file.mimeType,
+                  filename: file.filename
+                }
       ]
 
       logger.debug(
@@ -80,19 +83,30 @@ export abstract class BaseExtractor implements IExtractor {
             mimeType: c.mimeType,
             filename: "filename" in c ? c.filename : undefined,
             image: "image" in c ? StringUtils.mask(c.image?.toString() ?? "", 50) : undefined,
-            data: "data" in c ? StringUtils.mask(c.data?.toString() ?? "", 50) : undefined
+            data: "data" in c ? StringUtils.mask(c.prompt?.toString() ?? "", 50) : undefined,
+            prompt: buffer.toString() ? buffer.toString() : undefined
           }))
         )}\n`
       )
 
-      const { object } = await generateObject({
-        model: this.model,
-        schema: output,
-        system: instructions,
-        messages: [{ role: "user", content }]
-      })
-
-      return object
+      if (file.fileType !== "text") {
+        const { object } = await generateObject({
+          model: this.model,
+          schema: output,
+          system: instructions,
+          messages: [{ role: "user", content }] 
+        })
+        return object
+      } else {
+        const { object } = await generateObject({
+          model: this.model,
+          schema: output,
+          system: instructions,
+          prompt: buffer.toString()
+        })
+        return object
+      }
+      
     } catch (error) {
       if (APICallError.isInstance(error)) {
         throw new Error(
