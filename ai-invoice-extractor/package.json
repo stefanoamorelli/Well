@@ -60,6 +60,6 @@
 		"url": "https://github.com/WellApp-ai/Well/issues"
 	},
 	"engines": {
-		"node": "^20"
+		"node": ">=20"
 	}
 }
