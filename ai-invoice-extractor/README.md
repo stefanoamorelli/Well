@@ -70,6 +70,18 @@ EXTRACTOR_API_KEY=
 
 CLI options take precedence over environment variables. For instance, if 'openai' is configured as an environment variable, but you specify 'mistral' through the CLI, the final AI vendor will be determined as 'mistral'.
 
+## Contributing 
+
+We use [Bun](https://bun.sh/) instead of npm:
+
+```sh
+bun install
+bun run src/cli.ts -h                                          # run the CLI and get help
+bun run src/cli.ts -k [openai-api-key] examples/receipt.png    # run the CLI and get invoice data with openai
+```
+
+If you are on Windows, consider using bun@1.2.5 as we know there is no problem.
+
 ## Copyright
 
 &copy; [WellApp][wellapp] - Under [MIT license][license].
