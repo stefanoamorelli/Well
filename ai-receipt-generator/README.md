@@ -38,7 +38,8 @@ venv\Scripts\activate         # Windows
 ### 3. Install dependencies
 
 ```bash
-pip install -e .[dev]
+pip install -e .[dev]        # Windows
+pip install -e .\[dev\]      # Linux/macOS
 ```
 
 ### 4.Create a .env file at the project root
@@ -160,6 +161,11 @@ You can expose the engine via FastAPI:
 
 ```bash
 uvicorn core.api.app:app --reload
+```
+if error 
+
+```bash
+python -m uvicorn core.api.app:app --reload --app-dir=src --reload-dir=src
 ```
 
 ### Available endpoints:
